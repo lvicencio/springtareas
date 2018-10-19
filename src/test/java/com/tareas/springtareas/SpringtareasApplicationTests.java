@@ -5,7 +5,6 @@ import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
 
-import org.aspectj.lang.annotation.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
