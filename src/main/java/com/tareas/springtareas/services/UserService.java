@@ -47,4 +47,15 @@ public class UserService {
 	public User findByEmail(String email) {
 		return userRepository.findByEmail(email);
 	}
+
+	public boolean isUserPresent(String email) {
+		// TODO Auto-generated method stub
+		User u = userRepository.findByEmail(email);
+		if (u!=null) {
+			return true;
+		} else {
+			return false;
+		}
+		
+	}
 }
