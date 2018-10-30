@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html 	xmlns="http://www.thymeleaf.org"
+		 xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+		 layout:decorate="~{fragments/main_layout}"
+>
+
+<head>
+</head>
+
+
+<body>
+	<div layout:fragment="content" class="container"  style="padding-top: 20px">
+		
+		<form action="/users" class="form-inline">
+			<div class="form-group md-2">
+				<input type="text" class="form-control"  name="name" placeholder="Buscar por Nombre"/>
+				<input type="submit" value="buscar"  class="btn btn-primary"/>
+			</div>
+		</form>
+		
+		<div class="card">
+			<div class="card card-body">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>Nombre</th>
+							<th>Correo</th>
+							<th>Dirección</th>
+							<th>Telefono</th>
+							<th>Agregar</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="user:${users}">
+							<td th:text="${user.name}"></td>
+							<td th:text="${user.email}"></td>
+							<td th:text="${user.direccion}"></td>
+							<td th:text="${user.phone}"></td>
+							<td><a th:href="@{/agregartarea(email=${user.email})}" class="btn btn-primary">Agregar Tarea</a></td>
+						</tr>
+					</tbody>
+				</table>	
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>
